@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"415912e0c7",applicationID:"539339756"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="canonical" href="https://cse.umn.edu/" />
+<link rel="shortlink" href="https://cse.umn.edu/" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-site-verification" content="O0tuyujLt18OFtKXmLnRgfsxQ7Qpl1JVvTu1ermJurc" />
+<link rel="shortcut icon" href="https://cse.umn.edu/sites/cse.umn.edu/files/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://cse.umn.edu/college" />
+<script src="https://cse.umn.edu/sites/cse.umn.edu/files/google_tag/primary/google_tag.script.js?quhzom" defer></script>
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script>
+
+  <title>CSE Home | College | College of Science and Engineering</title>
+  <link rel="stylesheet" media="all" href="https://cse.umn.edu/sites/cse.umn.edu/files/css/css_OiTiQopqnGfbgDALkpsOyNicUTl6GQayQVgbuhUrJko.css" />
+<link rel="stylesheet" media="all" href="https://cse.umn.edu/sites/cse.umn.edu/files/css/css_oUU_GRqMG94U0EEmk6j8guWrXj8Z-1QdTOWC_-5X3V4.css" />
+<link rel="stylesheet" media="all" href="https://cse.umn.edu//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://cse.umn.edu/sites/cse.umn.edu/files/css/css_-zjkjO_8_OTi6ts9fQbHpXmaODeotUZM3nQ5cCuBpMk.css" />
+
+  
+<!--[if lte IE 8]>
+<script src="https://cse.umn.edu/sites/cse.umn.edu/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" defer crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/releases/v5.12.0/js/v4-shims.js" defer crossorigin="anonymous"></script>
+
+</head>
+<body class="no-sidebars page-node-4336 path-frontpage page-node-type-unit-landing-page">
+  <div class="page-wrapper">
+  
+      <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3CDPQ7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+ <!-- Begin UMN Header -->
+<header role='banner'>
+
+    <div id="skip">
+    <a class="visually-hidden focusable skip-link" href="#content">
+        Skip to main content
+    </a>
+  </div>
+
+<div id="mandatory-header-wrapper" class="umnhf-campus-tc dtd umnhf-background-maroon dropdown no-links">
+ <div class="umnhf" id="umnhf-h">
+        <div class="umnhf" id="umnhf-h-mast">
+            <a class="umnhf" id="umnhf-h-wm" href="https://twin-cities.umn.edu"><span>Go to the U of M home page</span></a>
+                                    <ul class="umnhf" id="umnhf-h-ql" role="presentation">
+                <li class="umnhf" id="umnhf-h-onestop"><a href="https://onestop.umn.edu">One Stop</a></li>
+                <li class="umnhf" id="umnhf-h-myu"><a href="http://www.myu.umn.edu">MyU<span></span>: For Students, Faculty, and Staff</a></li>
+            </ul>
+                        <!-- Button below is for dropdown toggle, only visible on mobile screens. If using a non-dropdown version you can delete this tag -->
+            <button class="umnhf" id="umnhf-m-search" href="#" title="toggle search field">Search</button>        </div>
+        <div
+  class="gcse-searchbox-only"
+        data-resultsUrl="https://cse.umn.edu/search/results"
+  ></div>
+    </div>
+</div>
+<!-- End UMN Header. closing tag is in header/cse_header.html.twig -->
+ 
+
+        <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+  
+
+
+
+<div id="header" class="cse-header header-container-outer  header-color darker-gray">
+    <div class="header-container-inner">
+    <div class="header-dept-info">
+      
+
+<div class="unit-logo">
+						<a href="https://cse.umn.edu/college" class="image-logo">
+									<img src="https://cse.umn.edu/sites/cse.umn.edu/themes/custom/cse/img/CSE/logo.png" alt="College of Science and Engineering"/>
+							</a>
+			</div>
+    </div>
+
+        <a class="cse-header-button" href="https://cse.umn.edu/covid-19">CSE COVID-19 Resources</a>
+      </div>
+     <nav class="menu header-main super-main nav-container-outer">
+    <!-- Main menu -->
+        <div class="region region-navigation-collapsible">
+        
+
+<div id="block-mainnavigation" data-block-plugin-id="superfish:main" class="block block-superfish block-superfishmain">
+  
+    
+      
+<ul id="superfish-main" class="menu sf-menu sf-main sf-horizontal sf-style-none">
+  
+<li id="main-menu-link-contentd014d08f-2361-4d54-9445-2d31081fed6e" class="sf-depth-1 menuparent"><a href="https://cse.umn.edu/college/information-future-students" class="sf-depth-1 menuparent">Future students</a><ul><li id="main-menu-link-contentdccedf03-e5d7-480c-a5b7-feffc5edb2d7" class="sf-depth-2 menuparent"><a href="" class="sf-depth-2 menuparent">Why CSE?</a><ul><li id="main-menu-link-content7c3140e9-ceb2-4c81-92c2-e57131a6376d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/what-will-i-study" class="sf-depth-3">What will I study?</a></li><li id="main-menu-link-content996b986f-e8cc-484c-886d-50b4abf78c9d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/what-makes-place-so-great" class="sf-depth-3">What makes this place so great?</a></li><li id="main-menu-link-content8f4cce3c-065f-4554-bfd0-28d91ce7a3f1" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/who-will-i-hang-out" class="sf-depth-3">Who will I hang out with?</a></li><li id="main-menu-link-contentbd3f9381-44f9-4c28-9971-2984c5f28aa8" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/how-do-i-pay-for-it" class="sf-depth-3">How do I pay for it?</a></li><li id="main-menu-link-contentf1b802f6-e580-4e6e-921d-0801fffb295c" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/will-i-get-a-job" class="sf-depth-3">Will I get a job?</a></li></ul></li><li id="main-menu-link-content239b58b6-522c-41b3-b846-9ac909344f60" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/collegiate-life" class="sf-depth-2 menuparent">Beyond the classroom</a><ul><li id="main-menu-link-content2bfa18bc-72fd-4499-93b0-9b0c76ba7362" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/diversity-and-inclusion-opportunities" class="sf-depth-3 sf-external">Diversity and Inclusion Opportunities</a></li><li id="main-menu-link-contentf7ed0359-f305-4746-afd0-0ea7fc46e585" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/learn-abroad" class="sf-depth-3">Learn abroad</a></li><li id="main-menu-link-contentb15b0aa7-56cd-4d86-9b4a-0f97e55896b0" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/living-learning-communities" class="sf-depth-3">Living Learning Communities</a></li><li id="main-menu-link-content7ba8efb1-3a8b-40e3-8786-a939ef651f7a" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/mentor-programs" class="sf-depth-3">Mentor programs</a></li><li id="main-menu-link-content20ebfa48-24b9-4172-b875-7996a3116d2d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/programs-women" class="sf-depth-3">Programs for women</a></li><li id="main-menu-link-content661dd2ad-dfa6-4be8-8d35-cf6d0b44e8d6" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/student-research" class="sf-depth-3">Research</a></li><li id="main-menu-link-contentd39befc9-6421-4112-98bc-67d5e7433459" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/student-groups" class="sf-depth-3">Student groups</a></li></ul></li><li id="main-menu-link-content7960e237-4f2c-4739-b1e8-e66972c72d5e" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/information-future-students" class="sf-depth-2 menuparent">More information</a><ul><li id="main-menu-link-content2009579b-3c36-4908-95df-7bcebdb6df26" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/orientation" class="sf-depth-3">Orientation</a></li><li id="main-menu-link-contentd8152c86-a1f0-476a-acf7-9493db665efc" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/scholarships" class="sf-depth-3">Scholarships</a></li><li id="main-menu-link-content705685f4-1f2f-43e2-a107-b0c724e543ba" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-1001-first-year-experience" class="sf-depth-3">First-Year Experience</a></li><li id="main-menu-link-content7af42564-93c7-496c-9b25-1465ef3a2dbc" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/future-transfer-students" class="sf-depth-3">Future transfer students</a></li><li id="main-menu-link-contenta73e8f2c-946e-42fd-9eb8-460b3ebfc3c3" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/future-international-students" class="sf-depth-3">Future international students</a></li><li id="main-menu-link-content8f74bc7e-e8d6-40b2-9df0-fc86762f7b86" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/future-graduate-students" class="sf-depth-3">Future graduate students</a></li></ul></li></ul></li><li id="main-menu-link-content6130b4ca-f3f5-4640-a79b-a7978d821a63" class="sf-depth-1 menuparent"><a href="https://cse.umn.edu/college/current-students" class="sf-depth-1 menuparent">Current students</a><ul><li id="main-menu-link-content89ea6791-87a0-4aac-b2ad-fc100025fe38" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/departments-and-majors" class="sf-depth-2 menuparent">Departments and majors</a><ul><li id="main-menu-link-content16137e31-c2c9-4421-81b3-7a1a020ecf88" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/departments" class="sf-depth-3">Departments</a></li><li id="main-menu-link-content697e0392-a65e-418a-87e8-97b96b33941a" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/undergraduate-majors" class="sf-depth-3">Undergraduate majors</a></li><li id="main-menu-link-content3741bd59-d4a7-4a94-b4b9-040ae7d6db0f" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/graduate-programs" class="sf-depth-3">Graduate programs</a></li><li id="main-menu-link-contentabd748d8-171d-4806-9537-2c41d2d1f45e" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/integrated-degree-programs" class="sf-depth-3">Integrated Degree Programs</a></li><li id="main-menu-link-contentc988e022-d2b1-45cf-9ada-6264139fb250" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/additional-degree-granting-programs" class="sf-depth-3">Additional degree-granting programs</a></li><li id="main-menu-link-content816dbe82-01fd-4592-9a9b-d5e0d6cd4f01" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/online-learning" class="sf-depth-3">Online learning</a></li></ul></li><li id="main-menu-link-contentb15cf493-d7e9-4dd6-b4f0-6d2b2c674a23" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/academic-advising" class="sf-depth-2 menuparent">Academic Advising</a><ul><li id="main-menu-link-contente391b3aa-49e2-4965-a4cd-c4590412eef0" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-academic-advising-faq" class="sf-depth-3">Academic Advising FAQ</a></li><li id="main-menu-link-content52f5f025-00e6-48d5-86bf-e5ad19192c46" class="sf-depth-3 sf-no-children"><a href="http://advisingblog.cse.umn.edu/" class="sf-depth-3 sf-external">Academic Advising Blog</a></li><li id="main-menu-link-content1a884f28-e432-45f3-9a5a-8e646a84d157" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/appointments-and-drop-ins" class="sf-depth-3">Appointments and drop-ins</a></li><li id="main-menu-link-content06b1aee0-1fcc-478f-b709-b54e2bee4847" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/academic-support" class="sf-depth-3">Academic support</a></li><li id="main-menu-link-content9d948c98-f507-4d84-ae85-3267c883f558" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-undergraduate-commencement-ceremony" class="sf-depth-3">Commencement</a></li><li id="main-menu-link-content71a561a7-a74c-4b94-8844-0c489efc58db" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/four-year-plans" class="sf-depth-3">Four-year plans</a></li><li id="main-menu-link-content7c8781a1-1790-4a2c-8b0e-95562886ff67" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/honors-advising" class="sf-depth-3">Honors advising</a></li><li id="main-menu-link-content82254246-bc18-4da0-879b-f765ba07bd4c" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/policies-procedures-and-forms" class="sf-depth-3">Policies, procedures, and forms</a></li></ul></li><li id="main-menu-link-contentdf13024d-9bc6-4ea9-a6e7-c6d21ad65cdc" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/career-center" class="sf-depth-2 menuparent">Career Center</a><ul><li id="main-menu-link-content07e165e4-c5f7-494a-a035-8d2a428888ec" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/resumes-and-cover-letters" class="sf-depth-3">Resumes and cover letters</a></li><li id="main-menu-link-contentdddf9e60-f30c-4141-b808-a5092fb1847c" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/jobs-and-internships" class="sf-depth-3">Jobs and internships</a></li><li id="main-menu-link-content32f774de-8a7c-4ca5-a9a8-37c684c00139" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/interviews-and-job-offers" class="sf-depth-3">Interviews and job offers</a></li><li id="main-menu-link-content260f369f-03ce-49c7-a701-e6434c7cc3ed" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-career-fair" class="sf-depth-3">CSE Career Fair</a></li><li id="main-menu-link-contentf3a4b677-30b0-4452-95f0-82e14dc3ceba" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/major-and-career-exploration" class="sf-depth-3">Major and career exploration</a></li><li id="main-menu-link-content13a10e95-2c08-463c-b8b4-c709d930a343" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/graduate-school" class="sf-depth-3">Graduate school</a></li></ul></li><li id="main-menu-link-content7fe731b9-71d7-460b-a139-c4e2f561f1dc" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/collegiate-life" class="sf-depth-2 menuparent">Collegiate Life</a><ul><li id="main-menu-link-content380bd6de-4461-4340-a13a-0ae0fe1dbdd8" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/diversity-and-inclusion-opportunities" class="sf-depth-3 sf-external">Diversity and Inclusion Opportunities</a></li><li id="main-menu-link-content9bebafa0-882d-4296-83bc-577de69ce2c3" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/learn-abroad" class="sf-depth-3">Learn abroad</a></li><li id="main-menu-link-content5f6c0880-319a-4a55-b0e4-a05d13003079" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/mentor-programs" class="sf-depth-3">Mentor programs</a></li><li id="main-menu-link-content4294bfe2-e977-4c87-a4c0-b9817d0c15a5" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/programs-women" class="sf-depth-3">Programs for women</a></li><li id="main-menu-link-content91d769a6-5a80-4b63-9ec2-06aef5a6b39a" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/student-research" class="sf-depth-3">Research</a></li><li id="main-menu-link-content38076df9-e44d-4e74-aed5-839d8ded4c8a" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/scholarships" class="sf-depth-3">Scholarships</a></li><li id="main-menu-link-contentf7aa0d08-3596-4619-81b3-fdce28711f8a" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/student-groups" class="sf-depth-3">Student groups </a></li><li id="main-menu-link-content4494011d-dada-4fc7-8d5d-1b24240c4807" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/volunteer-opportunities" class="sf-depth-3">Volunteer opportunities</a></li></ul></li><li id="main-menu-link-contente4e84b35-64c3-41b2-b89c-51cfb65da3b8" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/alliance" title="Diversity &amp; Inclusivity Alliance" class="sf-depth-2">Diversity &amp; Inclusivity Alliance</a></li><li id="main-menu-link-content9c911e51-69ef-4f30-826d-75a346eeb398" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/cseit" class="sf-depth-2">CSE-IT</a></li><li id="main-menu-link-content639e7cd5-9f56-49c1-9aca-0af9a942bba0" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/andersonlabs" class="sf-depth-2">Anderson Student Innovation Labs</a></li></ul></li><li id="main-menu-link-content3bf9d7ae-f8d7-482a-962a-24c6124e8396" class="sf-depth-1 menuparent"><a href="https://cse.umn.edu/college/alumni" class="sf-depth-1 menuparent">Alumni</a><ul><li id="main-menu-link-contentb6279291-8a93-4305-b722-204742ec523b" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/get-engaged-cse" class="sf-depth-2 menuparent">Get involved</a><ul><li id="main-menu-link-content3568adad-ca14-43ab-bde5-a1e201953c47" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/upcoming-alumni-events" class="sf-depth-3">Upcoming events</a></li><li id="main-menu-link-content37d21cc1-ed74-46e7-8dfb-dd5f2700a73c" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-alumni-society-board" title="The Alumni Society Board serves in an advisory role to the dean on matters concerning CSE alumni. " class="sf-depth-3">CSE Alumni Society Board</a></li><li id="main-menu-link-content262e5eae-abfc-44e5-9bd6-21a2482308ce" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/alumni-volunteer-interest-form" class="sf-depth-3">Alumni volunteer interest form</a></li><li id="main-menu-link-contentddcc48e5-0664-4419-9d8f-3836e5394046" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-mentor-program" class="sf-depth-3">Mentor programs</a></li><li id="main-menu-link-contentd15e29ff-463e-4686-ad5c-f86affa41c2d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/golden-medallion-society" class="sf-depth-3">Golden Medallion Society Reunion</a></li><li id="main-menu-link-content56a5505b-b583-4564-811a-9be8403b3b2d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-50-year-reunion" class="sf-depth-3">50-Year Reunion</a></li><li id="main-menu-link-contentb8ecb7b7-b539-466a-8ce7-f14e19e94ef0" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/alliance" title="Diversity &amp; Inclusivity Alliance" class="sf-depth-3">Diversity &amp; Inclusivity Alliance</a></li></ul></li><li id="main-menu-link-contentd0d19eea-7268-4bfa-9926-f9f5bcf88e39" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/alumni-awards-and-honors" class="sf-depth-2 menuparent">Honors/Awards</a><ul><li id="main-menu-link-content24664aea-7b6c-4420-9699-8424b19f7b8d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/outstanding-achievement-award" class="sf-depth-3">Outstanding Achievement</a></li><li id="main-menu-link-content238de408-3b31-481c-8bed-9c80c92ac2d6" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/alumni-service-awards" class="sf-depth-3">Alumni Service</a></li><li id="main-menu-link-content4896201c-11d0-434e-b446-a4b3d5ec7900" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/distinguished-leadership-award-internationals" class="sf-depth-3">Distinguished Leadership</a></li><li id="main-menu-link-contente0c7cd46-79cc-469a-922a-ddb43edd185b" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/honorary-degree" class="sf-depth-3">Honorary Doctorate Degrees</a></li><li id="main-menu-link-contente6b022a8-abc1-4b6b-8eb0-a4890cbd5f9a" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/nobel-laureates" class="sf-depth-3">Nobel Laureates</a></li></ul></li><li id="main-menu-link-contentaca83291-ac39-4a05-b1b5-685ca579ee4c" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/alumni-resources" class="sf-depth-2 menuparent">Resources</a><ul><li id="main-menu-link-contentf84555b7-ad36-4317-b81e-dc92e42295ed" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/career-resources-alumni" class="sf-depth-3">Alumni career resources</a></li><li id="main-menu-link-content49b54103-b7bb-4961-93e3-8f44fdcba7c5" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/alumni-news" class="sf-depth-3">Alumni news outlets</a></li><li id="main-menu-link-content52b35637-6906-47e3-a5cf-a52a3e0b7f4a" class="sf-depth-3 sf-no-children"><a href="https://identitystores.com/Stores/StoreFront.aspx?StoreId=3367" class="sf-depth-3 sf-external">CSE branded clothing</a></li><li id="main-menu-link-content180c067e-257f-48fc-9145-a93bd604f576" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/internationalresources" title="International alumni resources" class="sf-depth-3">International alumni resources</a></li><li id="main-menu-link-contentb9905cf4-795b-4dc2-afd5-41a3452f648d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/inventing-tomorrow-archive" class="sf-depth-3">Inventing Tomorrow magazine</a></li><li id="main-menu-link-content900cdf7f-7383-40ae-9a0d-5319ec05b685" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/update-your-contact-info" class="sf-depth-3">Update your info</a></li></ul></li><li id="main-menu-link-content1bc17f99-423c-44a7-9bc0-35d5db552746" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/give-cse" class="sf-depth-2 menuparent">Give to CSE</a><ul><li id="main-menu-link-contente352331e-a660-464e-90ff-a84cf028c9a6" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/why-give-cse" class="sf-depth-3">Why give to CSE?</a></li><li id="main-menu-link-content5d689d52-bd7e-4e30-a967-2a178e8fab15" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/giving-priorities" class="sf-depth-3">College priorities</a></li><li id="main-menu-link-content5239bf36-51bf-48c8-99cb-9cf360317a55" class="sf-depth-3 sf-no-children"><a href="https://makingagift.umn.edu/give/fund.html?ownerCode=O_TCCLG&amp;areaCode=A_CSE1&amp;desc_source=CWXXUMGGIVEW" class="sf-depth-3 sf-external">Give online now</a></li><li id="main-menu-link-content3cabaf20-b7ee-4a69-a6ed-7341bed21c76" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/external-relations-office" class="sf-depth-3">External relations</a></li><li id="main-menu-link-content28488377-3f5f-4c5a-b2f9-fe9d585932c4" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/external-relations-office" class="sf-depth-3">Contact us </a></li></ul></li></ul></li><li id="main-menu-link-contentf7af3d98-41bc-4ae3-8169-19a5c2c3628c" class="sf-depth-1 menuparent"><a href="https://cse.umn.edu/college/give-cse" class="sf-depth-1 menuparent">Donors</a><ul><li id="main-menu-link-content6cca5d13-4f4c-4483-b162-9aee17a0e1bd" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/give-cse" class="sf-depth-2 menuparent">Give to CSE</a><ul><li id="main-menu-link-contentd44de1f1-caac-4f56-869e-715606b79649" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/why-give-cse" class="sf-depth-3">Why give to CSE?</a></li><li id="main-menu-link-content2e416e21-0885-4327-a22b-aa26fd54ef0d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/giving-priorities" class="sf-depth-3">Giving priorities</a></li><li id="main-menu-link-content0aafaeb8-2522-4dbd-b880-135a708d7ad9" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/donor-stories" class="sf-depth-3">Donor stories</a></li><li id="main-menu-link-contentc5f7bbca-42f0-4cf9-a3d0-323b2eb3b965" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/impact-giving" class="sf-depth-3">Impact of giving</a></li></ul></li><li id="main-menu-link-content4edbfdc2-5298-4171-89f7-f88cc3c6fe1e" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/ways-give" class="sf-depth-2 menuparent">Ways to give</a><ul><li id="main-menu-link-content2eee926b-1314-4ace-b82a-96f2b7a804f9" class="sf-depth-3 sf-no-children"><a href="https://give.umn.edu/waystogive/matching-gifts" class="sf-depth-3 sf-external">Matching gifts</a></li><li id="main-menu-link-content2ed38fe7-2be6-47e0-a7e2-d289779a94c5" class="sf-depth-3 sf-no-children"><a href="https://makingagift.umn.edu/give/fund.html?ownerCode=O_TCCLG&amp;areaCode=A_CSE1&amp;desc_source=CWXXUMGGIVEW" class="sf-depth-3 sf-external">Give online now</a></li></ul></li><li id="main-menu-link-content0e934312-3981-4f6c-8552-e7301f812698" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/external-relations-office" class="sf-depth-2 menuparent">Contact Us</a><ul><li id="main-menu-link-content7c939f10-dd54-47d1-8ab8-e5ef77689874" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/external-relations-office" class="sf-depth-3">External relations</a></li><li id="main-menu-link-content5fa8dee9-1a67-4939-acd4-15a98800d47a" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-directories" class="sf-depth-3">CSE directories</a></li></ul></li></ul></li><li id="main-menu-link-content6be6d1b1-d3bc-4038-8241-0eaca2edaca2" class="sf-depth-1 menuparent"><a href="https://cse.umn.edu/college/corporate-partners" class="sf-depth-1 menuparent">Corporate partners</a><ul><li id="main-menu-link-contentbcfc4a8d-f735-4b4d-be88-5abd4f9ff906" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/recruit-our-students" class="sf-depth-2">Recruit our students</a></li><li id="main-menu-link-content11b8221b-876a-4ad9-afe7-7c89ce9e7814" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/corporate-partners" class="sf-depth-2 menuparent">Connect with us</a><ul><li id="main-menu-link-content177685b0-cdd1-4e2e-be65-0e7f1e8b63b7" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-numbers" class="sf-depth-3">CSE by the numbers</a></li><li id="main-menu-link-contente79c30dd-c224-402f-ac6e-3567dcd10a2c" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/career-fair-information-employers" class="sf-depth-3">Career fair information</a></li><li id="main-menu-link-content10fa8d5c-2e2f-41fd-a893-fba13d99ee4a" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-mentor-program" class="sf-depth-3">Mentor program</a></li><li id="main-menu-link-content1088e344-a000-4691-bb2f-c114a7d71a26" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/student-groups" class="sf-depth-3">Connect with a student group</a></li><li id="main-menu-link-content4d637fa0-bd4d-4b22-9c80-642caec24268" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/professional-development-and-continuing-education" class="sf-depth-3">Professional development</a></li></ul></li><li id="main-menu-link-content5833f39c-ddea-458d-bcff-85f1802c642f" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/corporate-partners" class="sf-depth-2 menuparent">Partner with us</a><ul><li id="main-menu-link-contentf0f8bfd6-47a8-45d8-bc21-2688b440412b" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/become-research-partner" class="sf-depth-3">Connect with researchers</a></li><li id="main-menu-link-content3684a794-d1fa-459d-baef-4c141132637d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/research-centers-and-facilities" class="sf-depth-3">Research centers and facilities</a></li><li id="main-menu-link-content1e2e0a1d-0db0-40c5-9955-7bf1363c3821" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/research-updates" class="sf-depth-3">Research news</a></li><li id="main-menu-link-contentdb5ad640-4028-4ae4-ac14-69c1fae6784d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-diversity-initiatives" class="sf-depth-3">Diversity initiatives</a></li><li id="main-menu-link-content9045ea6b-3612-4ef3-ac4c-2f8057bd126e" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/k-12-outreach" class="sf-depth-3">K-12 outreach</a></li></ul></li><li id="main-menu-link-content880a8d00-75a9-48a6-932d-a03705a63d93" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/give-cse" class="sf-depth-2 menuparent">Support us</a><ul><li id="main-menu-link-contentda1fa8b0-03c1-4ad9-b704-771765bdb926" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/why-give-cse" class="sf-depth-3">Why give to CSE?</a></li><li id="main-menu-link-content4b16382f-9e2e-4a3d-9007-f15183f0ee7f" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/giving-priorities" class="sf-depth-3">CSE priorities</a></li><li id="main-menu-link-content7248511a-5cf8-446c-adee-75fa36ca1595" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/corporate-partnership-and-sponsor-opportunities" class="sf-depth-3">Corporate sponsorship opportunities</a></li></ul></li><li id="main-menu-link-contentd1fd15da-3509-4056-afff-195601cb98be" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/cse-corporate-relations" class="sf-depth-2 menuparent">Contact us</a><ul><li id="main-menu-link-content17a2eea5-59ea-4936-8044-8868e01650d6" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-directories" class="sf-depth-3">CSE directories</a></li><li id="main-menu-link-contentca3bfc29-9f43-4a0f-8073-b3d76e5d8ac7" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-corporate-relations" class="sf-depth-3">Corporate relations</a></li><li id="main-menu-link-content2380d5a2-ea39-4d69-a105-46b955047fa8" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/external-relations-office" class="sf-depth-3">External relations</a></li></ul></li></ul></li><li id="main-menu-link-contentd26ca6b3-e2d2-4505-98ae-3d98eab11e63" class="sf-depth-1 menuparent"><a href="https://cse.umn.edu/college/faculty-and-staff" class="sf-depth-1 menuparent">Faculty and staff</a><ul><li id="main-menu-link-content4a116342-fa2a-49b1-a93f-c4e5e1f8d6f5" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/administrative-offices" class="sf-depth-2 menuparent">Administrative Offices</a><ul><li id="main-menu-link-content86399976-e3ee-4c88-84e7-4dcb98ec12b7" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/office-dean" class="sf-depth-3">Office of the Dean</a></li><li id="main-menu-link-content7fa06f7d-792e-46a7-b848-c6fcdeb91c81" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/office-associate-dean-academic-affairs" class="sf-depth-3">Academic affairs</a></li><li id="main-menu-link-content1f3d2a6f-ce29-40fc-ad07-9579ad10230d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/budget-and-finance-office" class="sf-depth-3">Budget and finance</a></li><li id="main-menu-link-contentd0e3ff6b-f0a3-40ac-a23e-ad553c2969c7" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-office-communications-and-marketing" class="sf-depth-3">Communications</a></li><li id="main-menu-link-contente3e8d8a3-0435-45fa-8994-94ba3de7f108" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/external-relations-office" class="sf-depth-3">External relations</a></li><li id="main-menu-link-contentd92fe37e-f2ae-4f93-9460-4ca1abf59a25" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/human-resources-office" class="sf-depth-3">Human resources</a></li><li id="main-menu-link-content4f70248c-a303-4263-a083-893176c13c47" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/office-associate-dean-research" class="sf-depth-3">Research and planning</a></li><li id="main-menu-link-content07e554e1-b5c2-4423-9664-6fa09bbca5ac" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/office-associate-dean-undergraduate-programs" class="sf-depth-3">Undergraduate programs and student services</a></li></ul></li><li id="main-menu-link-contentbf293981-cf8b-47aa-bb0b-21c3135640b0" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/cse-committees" title="CSE Committees" class="sf-depth-2">CSE Committees</a></li><li id="main-menu-link-contentf77408a9-6819-44c3-b30c-f557374330bc" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/cse-policies" class="sf-depth-2 menuparent">CSE Policies</a><ul><li id="main-menu-link-content8f87fda7-813f-48f4-8353-f6b393cf9af6" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/policies-procedures-and-forms" class="sf-depth-3">Academic policies</a></li><li id="main-menu-link-content2205da1a-e392-4cbb-986e-f1fc05154f00" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/office-associate-dean-academic-affairs" class="sf-depth-3">Faculty hiring and tenure policies</a></li><li id="main-menu-link-content28d49049-3028-484e-ad2b-76c6843a1460" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/budget-and-finance-office" class="sf-depth-3">Finance policies and information</a></li><li id="main-menu-link-contentecbcabc0-87c4-40ff-980d-7ace45f2fdde" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-graduate-education-policies-and-procedures" class="sf-depth-3">Graduate education policies</a></li><li id="main-menu-link-content36bbed60-5f4d-428d-b3d2-4a2d6856eb28" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/human-resources-office" class="sf-depth-3">Human resources policies</a></li><li id="main-menu-link-content59449381-b02b-4a5a-a31f-882616b678c8" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/research-policies" class="sf-depth-3">Research policies</a></li></ul></li><li id="main-menu-link-content9b322a00-bde8-4f9c-bdcb-964b0caba5de" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/alliance" title="Diversity &amp; Inclusivity Alliance" class="sf-depth-2">Diversity &amp; Inclusivity Alliance</a></li><li id="main-menu-link-contentd317f443-9aa5-4119-a723-b6cf6a674d50" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/award-winning-cse-faculty" class="sf-depth-2 menuparent">Faculty awards</a><ul><li id="main-menu-link-content764dd9bd-a2f1-4ca3-a89c-024a0fdd0ae1" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/national-academies" class="sf-depth-3">National academies</a></li><li id="main-menu-link-content65369eb3-96a2-41e4-8633-771b82361ccd" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/university-wide-awards-teaching-advising-and-service" class="sf-depth-3">University awards</a></li><li id="main-menu-link-content34156fa7-2b09-4513-99bc-5ddd851733a7" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/honorary-professorships" class="sf-depth-3">Honorary professorships</a></li><li id="main-menu-link-content72924165-3a02-4d80-acfe-a6a78538d85a" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/collegiate-awards" class="sf-depth-3">Collegiate awards</a></li><li id="main-menu-link-contentfcf370fa-4002-4e86-8dfc-da9d9b8ce953" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/honors-and-awards" class="sf-depth-3">Other CSE honors and awards</a></li></ul></li><li id="main-menu-link-content447a754e-e551-4351-99af-618eed0697d7" class="sf-depth-2 menuparent"><a href="https://cse.umn.edu/college/research" class="sf-depth-2 menuparent">Research</a><ul><li id="main-menu-link-content7343b9d7-ffb9-4808-aa65-509f81435ba3" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/research-centers-and-facilities" class="sf-depth-3">Research centers and facilities</a></li><li id="main-menu-link-contentd61cb51c-825f-49df-9d3d-78184392bf68" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/research-proposal-submission-process" class="sf-depth-3">Research proposal submission process</a></li><li id="main-menu-link-content1f5b08ac-2e8a-4790-8801-3e9238b514eb" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/research-safety" class="sf-depth-3">Research safety</a></li><li id="main-menu-link-content73bb77ed-af54-46cc-939c-66d7999ee640" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/cse-shop" class="sf-depth-3">CSE Shop</a></li><li id="main-menu-link-content84ab23b5-e1f1-428e-918f-8ff8e87c872d" class="sf-depth-3 sf-no-children"><a href="https://cse.umn.edu/college/mndrive-minnesota-discovery-research-and-innovation-economy" class="sf-depth-3">MnDRIVE research initiative</a></li></ul></li><li id="main-menu-link-content5058fa8d-3281-4261-8d76-e10b310985cc" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/cse-performance-management-process" class="sf-depth-2">Performance Management Process</a></li></ul></li><li id="main-menu-link-contentf9641ef6-09b6-4e7e-b54f-3abe93d87b43" class="sf-depth-1 menuparent"><a href="https://cse.umn.edu/college/k-12-outreach" class="sf-depth-1 menuparent">K-12 Outreach</a><ul><li id="main-menu-link-content40f3c5d5-5a15-41d4-bfa8-43529e801e76" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/summer-camps" class="sf-depth-2">Summer camps</a></li><li id="main-menu-link-content69d27f2e-f0fc-41c0-a87a-1f2a862d9d42" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/outreach-events" class="sf-depth-2">Outreach events</a></li><li id="main-menu-link-content517fcc15-5f38-493b-b2e4-fe8d8d7c5763" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/enrichment-programs" class="sf-depth-2">Enrichment programs</a></li><li id="main-menu-link-content7930e867-b284-4209-9a42-64752d0a86c4" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/field-trips" class="sf-depth-2">Field trips and tours</a></li><li id="main-menu-link-contentd005b76b-bc3d-4716-b281-6b10d2c8c3b7" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/cse-k-12-virtual-classroom-resources" class="sf-depth-2">CSE K-12 Virtual Classroom Resources</a></li><li id="main-menu-link-contentea74c900-a4dd-4c95-b146-74e89073efb8" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/educator-development" class="sf-depth-2">Educator development</a></li><li id="main-menu-link-content59fcb4da-beb6-4629-b5f7-fd5d2e56c5d7" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/alumni-volunteer-interest-form" class="sf-depth-2">Volunteer</a></li><li id="main-menu-link-contentd34cb8bd-c0ca-453c-a364-95e110f3e377" class="sf-depth-2 sf-no-children"><a href="https://cse.umn.edu/college/corporate-k-12-outreach-initiatives" class="sf-depth-2">Sponsor an event</a></li></ul></li>
+</ul>
+
+  </div>
+    </div>
+
+  </nav>     
+    
+</div>
+</header>
+<!-- End CSE Header. opening tag is in include/umn-header.html.twig -->
+
+
+<div class="body content-container-outer">
+<main class="content-container-inner js-quickedit-main-content">
+
+                                    <div class="region region-header">
+        
+    </div>
+
+                   
+                                        <div class="region region-featured">
+        <div data-drupal-messages-fallback class="hidden"></div>
+
+    </div>
+
+                  
+                
+              
+            
+            
+                  <article  class="main-content page-sidebar-none" id="content">
+              <div class="region region-content">
+        
+
+<div id="block-cse-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+  
+    
+      <article id="node-4336" class="" role="article" about="https://cse.umn.edu/college">
+  
+    
+
+  
+    <div  class="cse-layout-one-column">
+      <div  class="cse-layout-main-region">
+      
+
+<div data-block-plugin-id="field_block:node:unit_landing_page:field_banner_header" class="block block-layout-builder block-field-blocknodeunit-landing-pagefield-banner-header">
+  
+    
+      
+            <div class="field field--name-field-banner-header field--type-entity-reference-revisions field--label-hidden field__item">
+ 
+
+
+
+            <div class="field field--name-field-banner field--type-entity-reference field--label-hidden field__item"><div class="media media--type-image media--view-mode-banner">
+  
+      
+            <div class="field field--name-image field--type-image field--label-hidden field__item">    <picture>
+                  <img src="https://mphysicians.org/sites/mphysicians.umn.edu/files/styles/scale_width_700/public/images/umn-campus.png?h=66f31750&itok=Yx7kwsBs" alt="Campus" typeof="foaf:Image" />
+
+  </picture>
+
+</div>
+      
+  </div>
+</div>
+      
+
+
+                <h1 class="banner-title">
+            <div class="field field--name-field-landing-page-title-text field--type-string field--label-hidden field__item">Conference for Community College CS Students</div>
+      </h1>
+    
+        <div class="banner-leadin-wrapper gold">
+                <div class="banner-leadin-container">
+                                                    
+
+
+
+
+            
+                            <div class="banner-leadin-text-container">
+                                        <p>A special on-campus event for community college computer science majors to discover educational and vocational opportunities.</p>
+                                                                <a href="#">Register Now!</a>
+                                    </div>
+                    </div>
+            </div>
+</div>
+      
+  </div>
+
+<div data-block-plugin-id="field_block:node:unit_landing_page:field_widgets" class="block block-layout-builder block-field-blocknodeunit-landing-pagefield-widgets">
+  
+    
+      
+      <div class="field--name-field-oc-widgets field--type-paragraphs">
+             
+
+
+
+
+
+
+
+<div class="slope left">
+	
+		<div class="paragraph paragraph--type--text-media paragraph--view-mode--default paragraphs-item-136">
+
+								<div class="widget-style none">
+					
+					<div class="wrapper ">
+						
+
+	<h2 class="widget-title">Join us in Minneapolis to accelerate your future!</h2>
+
+	<div class="tm-holder">
+					<div class="media-right grid-single rounded">
+									<div class="field--name-field-text-media-images field--type-entity-reference">
+																					<div class="field--item">
+									<div class="media media--type-image media--view-mode-medium">
+  
+      
+            <div class="field field--name-image field--type-image field--label-hidden field__item">    <picture>
+                  <source srcset="https://i.pinimg.com/originals/8b/2a/ee/8b2aeebe5ec1c95e60af2c34cf8e322a.jpg 1x" media="all and (min-width: 768px)" type="image/jpeg"/>
+                  <img src="https://i.pinimg.com/originals/8b/2a/ee/8b2aeebe5ec1c95e60af2c34cf8e322a.jpg" alt="Researchers in the lab" typeof="foaf:Image" />
+
+  </picture>
+
+</div>
+      
+  </div>
+
+								</div>
+																		</div>
+							</div>
+			<div class="text half">
+				
+            <div class="clearfix text-formatted field field--name-field-long-text field--type-text-long field--label-hidden field__item"><p>The transition from community college to a four-year university can be intense and uncertain. The UMN CS summer session for community college computer science students is designed to help students make the leap with confidence in their academic performance and employment prospects. Meet other top computer science students and learn from the best about how to upgrade to a four-year program.</p>
+
+<p>Financial assistance is available to qualified applicants. Potential attendees with non-traditional backgrounds in computer science are especially encouraged to apply. The conference is open to all students from the upper midwest (Minnesota, Wisconsin, Illinois, Iowa, North & South Dakota) in partnership with associated state-level institutions.</p>
+
+<p><a href="#">Register Now!</a></p></div>
+      
+							</div>
+
+			</div>
+					</div>
+
+									</div>
+
+			</div>
+
+			
+		</div>
+             
+
+
+
+
+
+
+
+<div class="slope none">
+	
+		<div class="paragraph paragraph--type--custom-code paragraph--view-mode--default paragraphs-item-131">
+
+								<div class="widget-style image image-center"
+			style="background:url(https://cse.umn.edu/sites/cse.umn.edu/files/red-mosaic.png) no-repeat">
+			
+					<div class="wrapper ">
+						<div class="home-jumbotron-outer">
+  <div class="jumbotron home-jumbotron">
+    <div class="container text-center">
+      <h2>We have a lot in common. Join&nbsp;us.</h2>
+      <h3>Driven by curiosity. Inspired by&nbsp;opportunity.</h3>
+      <div class="row">
+        <a href="https://cse.umn.edu/college/what-will-i-study">
+          <div class="home-circle">
+            <div class="home-circle-inner">
+              <div class="home-circle-content">
+                <div class="icon study"></div>
+                <div class="text">What will I&nbsp;learn?</div>
+                <div class="description">Discover how to make the jump to a four-year university.</div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="https://cse.umn.edu/college/what-makes-place-so-great">
+          <div class="home-circle">
+            <div class="home-circle-inner">
+              <div class="home-circle-content">
+                <div class="icon place"></div>
+                <div class="text">Why is this place so&nbsp;great?</div>
+                <div class="description">Our undergraduate programs consistently rank among the top 25 in the nation.</div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="https://cse.umn.edu/college/who-will-i-hang-out">
+          <div class="home-circle">
+            <div class="home-circle-inner">
+              <div class="home-circle-content">
+                <div class="icon hang"></div>
+                <div class="text">Who will I hang out&nbsp;with?</div>
+                <div class="description">Join students from around the upper midwest!</div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="https://cse.umn.edu/college/how-do-i-pay-for-it">
+          <div class="home-circle">
+            <div class="home-circle-inner">
+              <div class="home-circle-content">
+                <div class="icon money"></div>
+                <div class="text">How do I pay for&nbsp;it?</div>
+                <div class="description">Full scholarships are available for qualifying applicants.</div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="https://cse.umn.edu/college/will-i-get-a-job">
+          <div class="home-circle">
+            <div class="home-circle-inner">
+              <div class="home-circle-content">
+                <div class="icon job"></div>
+                <div class="text">Will I get a&nbsp;job?</div>
+                <div class="description">The conference includes the chance to meet recruiters from top companies.</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+					</div>
+
+									</div>
+
+			</div>
+
+			
+		</div>
+             
+
+
+
+
+
+
+
+<div class="slope left image-slope">
+	
+		<div class="paragraph paragraph--type--view-placer paragraph--view-mode--default paragraphs-item-141">
+
+								<div class="widget-style image image-center"
+			style="background:url(https://cse.umn.edu/sites/cse.umn.edu/files/home-events.jpg) no-repeat">
+			
+					<div class="wrapper ">
+							
+			<div class="view-widget  ">
+			    <h2 class="widget-title">Schedule</h2>
+
+	    
+
+<div class="views-element-container"><div class="event-listings view view-events view-id-events view-display-id-homepage_events js-view-dom-id-037eb1b3d31d828caf119ff1562aeb0d2506b60543e0c493ed4030b4aff9cd69">
+  
+    
+      
+      <div class="view-content">
+          <div class="event-article"><span class="date styled">
+<span class="month">July</span>
+<span class="day-number">??</span>
+<span class="day">Day</span>
+<span class="time">Time</span>
+</span>
+<div class="text">
+<h3 class="event-title"><a href="#">Networking Dinner</a></h3>
+<div class="location"><p><a href="https://www.google.com/maps/place/Sanford+Hall,+1122+University+Ave+SE,+Minneapolis,+MN+55455/@44.9805986,-93.2426228,17z/data=!3m1!4b1!4m5!3m4!1s0x52b32d12c454ff73:0xb3b17828f37a88f4!8m2!3d44.9805948!4d-93.2404341">UMN Samford Hall</a><br />
+</div>
+<div class="event-desc"><p>Registration Required</p></div>
+</div></div>
+    <div class="event-article"><span class="date styled">
+<span class="month">July</span>
+<span class="day-number">??</span>
+<span class="day">Day</span>
+<span class="time">Time</span>
+</span>
+<div class="text">
+<h3 class="event-title"><a href="https://cse.umn.edu/college/events/minnesota-night-skies-july">Conference</a></h3>
+<div class="location"><p><a href="https://www.google.com/maps/place/Kenneth+H.+Keller+Hall/@44.9755994,-93.2365994,18.45z/data=!4m5!3m4!1s0x52b32d17b0db0b6f:0x11e70f2b371279c9!8m2!3d44.9742826!4d-93.2323081">Keller Hall</a></p></div>
+<div class="event-desc"><p>Free · All Ages</p></div>
+</div></div>
+    <div class="event-article"><span class="date styled">
+<span class="month">July</span>
+<span class="day-number">??</span>
+<span class="day">Day</span>
+<span class="time">Time</span>
+</span>
+<div class="text">
+<h3 class="event-title"><a href="https://cse.umn.edu/college/events/characterization-facility-open-house-virtual">Recreation Day</a></h3>
+<div class="location"><p>Mall of America</p></div>
+<div class="event-desc"><p>Registration Required</p></div>
+</div></div>
+
+    </div>
+  
+          </div>
+</div>
+
+
+	</div>			
+					</div>
+
+									</div>
+
+			</div>
+
+			
+		</div>
+          </div>
+  
+  </div>
+    </div>
+    </div>
+
+
+  
+  
+  
+</article>
+  </div>
+    </div>
+
+          </article>
+              
+            
+  </main>
+</div>
+
+
+<footer>
+  
+<div class="cse-footer">
+	<div class="footer-accent-triangle"></div>
+
+	<div class="footer-container-outer">
+	<div class="footer-container-inner">
+		<div class="footer-left">
+			
+			
+
+
+	<div class="contact-info">
+					<h2 class="footer-unit-name">College of Science and Engineering</h2>
+		
+					<div class="footer-unit-address">
+				117 Pleasant St, Minneapolis MN 55455
+			</div>
+		
+					<div class="footer-unit-phone">
+				<a href="tel:(612  624-2006">(612) 624-2006</a>
+			</div>
+		
+					<div class="footer-unit-email">
+				<a href="mailto:cseinfo@umn.edu">cseinfo@umn.edu</a>
+			</div>
+			</div>
+
+			
+
+	<div class="custom-text">
+		<h3 class="footer-unit-title">Give to CSE</h3>
+		<p><a href="https://cse.umn.edu/college/why-give-cse/">Learn how you can support the<br />
+College of Science and Engineering.</a></p>
+	</div>
+		</div>
+		<div class="footer-right">
+			
+
+	<nav class="menu footer-links" aria-label="Footer">
+		<ul>
+						<div class="footer-links-column">
+			
+								<li><a href="https://cse.umn.edu/college/cse-directories">College directories</a> </li>
+								<li><a href="https://cse.umn.edu/college/about-college-science-and-engineering">About the college</a> </li>
+								<li><a href="http://campusmaps.umn.edu/">University maps</a> </li>
+							
+			</div>
+						<div class="footer-links-column">
+			
+								<li><a href="https://cse.umn.edu/college/news">News</a> </li>
+								<li><a href="https://cse.umn.edu/college/events">Events</a> </li>
+								<li><a href="https://cse.umn.edu/college/cse-webcam">CSE webcam</a> </li>
+							
+			</div>
+						<div class="footer-links-column">
+			
+								<li><a href="https://cse.umn.edu/college/research">Research</a> </li>
+								<li><a href="https://cse.umn.edu/college/award-winning-cse-faculty">Faculty awards</a> </li>
+								<li><a href="https://cse.umn.edu/college/graduate-student-resources">Grad students</a> </li>
+							
+			</div>
+						<div class="footer-links-column">
+			
+								<li><a href="http://umn.force.com/admissions/TCAdmissionsRFISignUpForm">Admissions info</a> </li>
+								<li><a href="http://admissions.tc.umn.edu/visit/index.html">Visit campus</a> </li>
+								<li><a href="http://admissions.tc.umn.edu/apply/index.html">Apply now</a> </li>
+							
+			</div>
+					</ul>
+	</nav>
+
+				<nav class="social" aria-label="Social Media">
+		<ul>
+												<li>
+						<a href="http://facebook.com/umn.cse/" aria-label="Facebook">
+							<i class="fab fa-facebook-square"></i>
+						</a>
+					</li>
+																<li>
+						<a href="http://twitter.com/umncse/" aria-label="Twitter">
+							<i class="fab fa-twitter-square"></i>
+						</a>
+					</li>
+																<li>
+						<a href="https://www.linkedin.com/groups/3884986/" aria-label="LinkedIn">
+							<i class="fab fa-linkedin"></i>
+						</a>
+					</li>
+																<li>
+						<a href="https://www.youtube.com/user/umnCSE" aria-label="YouTube">
+							<i class="fab fa-youtube"></i>
+						</a>
+					</li>
+																<li>
+						<a href="https://www.flickr.com/photos/umn_inst_tech/sets/" aria-label="Flickr">
+							<i class="fab fa-flickr"></i>
+						</a>
+					</li>
+																<li>
+						<a href="https://www.instagram.com/umncse/" aria-label="Instagram">
+							<i class="fab fa-instagram"></i>
+						</a>
+					</li>
+									</ul>
+	</nav>
+
+		</div>
+	</div>
+	</div>
+</div>
+<!-- End CSE footer. closing tag is in include/umn-footer.html.twig -->
+
+
+  
+  <!-- Begin UMN Footer. opening footer tag is in footer/cse_footer.html.twig-->
+<div id="umnhf-f" class="umnhf">
+    <nav id="umnhf-f-myu">
+        <h3 class="umnhf-f-title visually-hidden">For Students, Faculty, and Staff</h3>
+        <ul role="presentation">
+            <li><a href="http://onestop.umn.edu/">One Stop</a></li>
+            <li><a href="https://www.myu.umn.edu/">MyU <span></span></a></li>
+        </ul>
+    </nav>
+  <small>© <span id="cdate">2021</span> Regents of the <a href="https://system.umn.edu">University of Minnesota</a>. All rights reserved. The University of Minnesota is an equal opportunity educator and employer. <a href="https://privacy.umn.edu/">Privacy Statement</a></small>
+    <small><a href="https://oit-drupal-prd-web.oit.umn.edu/indexAccess.php?ref_url=https://cse.umn.edu/">Report Web Disability-Related Issue</a></small>
+    <!-- Optional last updated link-->
+     <!-- add time tag w datetime attr -->
+</div>
+
+<!-- End UMN Footer -->
+</footer>
+  </div>
+
+  
+    
+  </div>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/4336","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"addtoany\/addtoany,anchor_link\/drupal.anchor_link,ckeditor_indentblock\/indentblock,classy\/base,classy\/messages,core\/html5shiv,core\/normalize,core\/picturefill,cse\/bootstrap-scripts,cse\/global-styling,cse_layout\/cse_layout_one_column,folwell\/fontawesome,folwell\/fonts,folwell\/global-scripts,folwell\/global-styling,folwell_components\/fwcallout,folwell_components\/fwpullquote,fontawesome\/fontawesome.svg.shim,oc_custom\/custom-global,paragraphs\/drupal.paragraphs.unpublished,superfish\/superfish,superfish\/superfish_hoverintent,superfish\/superfish_smallscreen,superfish\/superfish_supposition,superfish\/superfish_touchscreen,system\/base,umn_search\/cse_library,views\/views.ajax,views\/views.module,views_ajax_history\/history","theme":"cse","theme_token":null},"ajaxTrustedUrl":[],"viewsAjaxHistory":{"renderPageItem":0},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:037eb1b3d31d828caf119ff1562aeb0d2506b60543e0c493ed4030b4aff9cd69":{"view_name":"events","view_display_id":"homepage_events","view_args":"1","view_path":"\/node\/4336","view_base_path":null,"view_dom_id":"037eb1b3d31d828caf119ff1562aeb0d2506b60543e0c493ed4030b4aff9cd69","pager_element":0}}},"superfish":{"superfish-main":{"id":"superfish-main","sf":{"animation":{"opacity":"show","height":"show"},"speed":0,"autoArrows":false,"dropShadows":false},"plugins":{"touchscreen":{"behaviour":"0","mode":"always_active"},"smallscreen":{"mode":"window_width","breakpoint":991,"accordionButton":"2","title":"Menu"},"supposition":true}}},"umn_search":{"cx":"002834015805923805805:c-0k--9bdkk"},"ajax":[],"user":{"uid":0,"permissionsHash":"2c9ad4a47ad441482378fab4e09038d6c16908677d65b65140f7f57980be01c6"}}</script>
+<script src="https://cse.umn.edu/sites/cse.umn.edu/files/js/js_2KYtn7jA-joJ4U-C6ELeiqkHYfcm58M-g5JGGdLLKEA.js"></script>
+<script src="https://static.addtoany.com/menu/page.js" async></script>
+<script src="https://cse.umn.edu/sites/cse.umn.edu/files/js/js_zpOxrNeMsjC37kFf7IV5VP7Vhm7hawasCCcj44QLzMg.js"></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"415912e0c7","applicationID":"539339756,154124920","transactionName":"NVJVbURQD0ICAUwKWwwYdlpCWA5fTCZKFkQDW2tXWVUEbSANVhdGDVtbXERtL14HB24KURV0WFdCQw5dDwdKTgoUXlJO","queueTime":0,"applicationTime":1224,"atts":"GRVWGwxKHEw=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
